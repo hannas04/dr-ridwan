@@ -161,6 +161,51 @@
   .btn-gold { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--champagne); color: var(--navy-dark); padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; border: none; cursor: pointer; }
   .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(185,150,12,0.4); }
 
+  /* GALLERY */
+  .gallery { background: var(--navy-dark); }
+  .gallery .section-title { color: white; }
+  .gallery .section-sub { color: rgba(255,255,255,0.55); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+  .gallery-item { position: relative; overflow: hidden; border-radius: 12px; height: 380px; box-shadow: 0 15px 45px rgba(0,0,0,0.3); transition: all 0.4s; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .gallery-item:hover img { transform: scale(1.08); }
+  .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(26,42,108,0.95), transparent); color: white; padding: 2rem 1.5rem 1.5rem; transform: translateY(20px); transition: transform 0.3s; }
+  .gallery-item:hover .gallery-caption { transform: translateY(0); }
+  .gallery-caption h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .gallery-caption p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+  /* AWARDS */
+  .awards { background: var(--cream); }
+  .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+  .award-card { background: white; border: 2px solid var(--border); border-radius: 10px; padding: 2rem; text-align: center; transition: all 0.3s; position: relative; }
+  .award-card::before { content: ''; position: absolute; top: -2px; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, var(--champagne), var(--gold-light)); border-radius: 2px; }
+  .award-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(26,42,108,0.12); }
+  .award-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--champagne); }
+  .award-card h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 0.6rem; font-weight: 600; }
+  .award-card p { font-size: 0.85rem; color: var(--slate-light); line-height: 1.6; }
+
+  /* AFFILIATIONS */
+  .affiliations { background: white; }
+  .affiliations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  .affiliation-item { background: linear-gradient(135deg, rgba(26,42,108,0.04), rgba(185,150,12,0.06)); border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem; transition: all 0.3s; position: relative; overflow: hidden; }
+  .affiliation-item::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--champagne), rgba(185,150,12,0.2)); }
+  .affiliation-item:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(26,42,108,0.08); }
+  .affiliation-icon { width: 50px; height: 50px; background: rgba(185,150,12,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+  .affiliation-icon i { color: var(--navy); font-size: 1.4rem; }
+  .affiliation-item h3 { font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; font-weight: 600; }
+  .affiliation-item p { font-size: 0.82rem; color: var(--slate-light); line-height: 1.7; }
+
+  /* TEACHING */
+  .teaching { background: var(--navy-dark); }
+  .teaching .section-title { color: white; }
+  .teaching .section-sub { color: rgba(255,255,255,0.55); }
+  .teaching-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; }
+  .teaching-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 2rem 1.6rem; text-align: center; transition: all 0.3s; }
+  .teaching-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: rgba(185,150,12,0.4); }
+  .teaching-icon { font-size: 2.2rem; color: var(--champagne); margin-bottom: 1rem; }
+  .teaching-card h3 { color: white; font-size: 1rem; margin-bottom: 0.6rem; font-weight: 600; }
+  .teaching-card p { color: rgba(255,255,255,0.65); font-size: 0.85rem; line-height: 1.6; }
+
   /* CONTACT */
   .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
   .contact-info-item { display: flex; gap: 1.2rem; align-items: flex-start; margin-bottom: 2rem; }
@@ -175,13 +220,17 @@
     font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--slate);
     background: white; transition: border-color 0.2s, box-shadow 0.2s; outline: none;
   }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(26,42,108,0.1); }
-  .form-group textarea { height: 130px; resize: vertical; }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(26,42,108,0.1); }
+  .form-group textarea { height: 130px; resize: vertical; min-height: 100px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .submit-btn { width: 100%; padding: 0.9rem; background: var(--navy); color: white; border: none; border-radius: 5px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 0.6rem; }
   .submit-btn:hover { background: var(--navy-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,42,108,0.3); }
-  .form-success { display: none; text-align: center; padding: 1.5rem; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; color: #166534; }
+  .form-success { display: none; text-align: center; padding: 2rem 1.5rem; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; color: #166534; animation: slideIn 0.3s ease-out; }
   .form-success i { font-size: 2rem; margin-bottom: 0.5rem; color: #16a34a; }
+  .form-success h4 { font-size: 1.1rem; font-weight: 600; margin: 0.5rem 0; }
+  .form-success p { font-size: 0.85rem; margin: 0; }
+  
+  @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
   /* FOOTER */
   footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 2.5rem 1rem; }
@@ -199,11 +248,75 @@
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .about-grid, .contact-grid, .research-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .form-row { grid-template-columns: 1fr; }
+    .about-grid, .research-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0.8rem; }
+    .gallery-grid { gap: 1.8rem; }
+    .gallery-item { height: 280px; }
+    .awards-grid { gap: 1.5rem; }
+    .affiliations-grid { gap: 1.5rem; }
+    .teaching-grid { gap: 1.3rem; }
     .timeline::before { left: 18px; }
     .tl-dot { width: 36px; height: 36px; }
-    section { padding: 4rem 1.2rem; }
+    .tl-item { gap: 1.5rem; margin-bottom: 2rem; }
+    section { padding: 3.5rem 1rem; }
+    .hero { padding: 5rem 1.5rem 3rem; }
+    .hero-avatar { width: 120px; height: 120px; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero-desc { font-size: 0.95rem; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-outline { width: 100%; max-width: 280px; }
+    .form-group input, .form-group textarea, .form-group select { font-size: 16px; padding: 0.75rem 0.9rem; }
+    .form-group textarea { height: 100px; }
+    .form-group label { font-size: 0.75rem; margin-bottom: 0.4rem; }
+    .submit-btn { font-size: 0.9rem; padding: 0.85rem; }
+    #back-top { bottom: 1.5rem; right: 1.5rem; width: 40px; height: 40px; font-size: 0.9rem; }
+    .section-title { font-size: clamp(1.4rem, 2vw, 2rem); }
+    .spec-grid { gap: 1.2rem; }
+    .spec-card { padding: 1.5rem 1.2rem; }
+    .award-card { padding: 1.5rem 1.2rem; }
+    .affiliation-item { padding: 1.5rem; }
+    .teaching-card { padding: 1.5rem 1.2rem; }
+    .research-cta { padding: 2rem 1.5rem; }
+    .research-cta h3 { font-size: 1.2rem; }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-caption { transform: translateY(0); padding: 1.5rem 1.2rem 1.2rem; }
+    .form-success { padding: 1.5rem; margin-top: 1rem; }
+    .contact-info-item { margin-bottom: 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    section { padding: 2.5rem 0.8rem; }
+    .hero { padding: 4rem 1rem 2rem; }
+    .container { padding: 0 0.8rem; }
+    .hero-avatar { width: 100px; height: 100px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: 1.6rem; line-height: 1.1; }
+    .hero-title { font-size: 0.9rem; }
+    .hero-desc { font-size: 0.88rem; margin-bottom: 1.8rem; }
+    .section-header { margin-bottom: 2rem; }
+    .section-title { font-size: 1.3rem; }
+    .section-tag { font-size: 0.7rem; }
+    .btn-primary, .btn-outline { padding: 0.8rem 1.8rem; font-size: 0.85rem; }
+    .gallery-item { height: 240px; }
+    .gallery-caption { padding: 1.5rem 1rem 1rem; }
+    .gallery-caption h3 { font-size: 0.95rem; }
+    .gallery-caption p { font-size: 0.75rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group input, .form-group textarea, .form-group select { padding: 0.65rem 0.8rem; font-size: 16px; }
+    .form-group textarea { height: 80px; }
+    .submit-btn { padding: 0.75rem; font-size: 0.85rem; }
+    .form-success { padding: 1.2rem; margin-top: 1rem; }
+    .form-success i { font-size: 1.8rem; }
+    .form-success h4 { font-size: 0.95rem; }
+    .form-success p { font-size: 0.8rem; }
+    .tl-item { gap: 1rem; }
+    .tl-dot { width: 32px; height: 32px; font-size: 0.75rem; }
+    .tl-body { padding: 1rem 1.2rem; }
+    .tl-body h4 { font-size: 0.85rem; }
+    .contact-info-item { gap: 0.8rem; margin-bottom: 1.5rem; }
+    .ci-icon { width: 40px; height: 40px; }
+    .ci-val { font-size: 0.85rem; }
+    #back-top { bottom: 1rem; right: 1rem; width: 38px; height: 38px; }
   }
 </style>
 </head>
@@ -214,8 +327,9 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#specializations">Research</a></li>
-    <li><a href="#timeline">Journey</a></li>
-    <li><a href="#publications">Publications</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#affiliations">Network</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
@@ -226,8 +340,9 @@
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#specializations" onclick="closeMobile()">Research</a>
-  <a href="#timeline" onclick="closeMobile()">Journey</a>
-  <a href="#publications" onclick="closeMobile()">Publications</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#awards" onclick="closeMobile()">Awards</a>
+  <a href="#affiliations" onclick="closeMobile()">Network</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
@@ -241,7 +356,7 @@
   <div class="hero-content">
     <div class="hero-badge"><i class="fas fa-university" style="margin-right:6px;font-size:0.7rem"></i>Ahmadu Bello University, Zaria</div>
     <div class="hero-avatar">
-      <!-- <img class="hero-avatar-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Academic portrait of Dr. Rilwan Aliyu"> -->
+      <img class="hero-avatar-img" src="img.jpg" alt="Academic portrait of Dr. Rilwan Aliyu">
     </div>
     <h1>Dr. <span>Rilwan Abdullahi</span> Aliyu</h1>
     <p class="hero-title">Lecturer · Department of Political and International Studies</p>
@@ -433,7 +548,123 @@
   </div>
 </section>
 
-<section id="contact">
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag" style="color:var(--champagne)"><i class="fas fa-images" style="margin-right:6px;"></i>Gallery</div>
+      <h2 class="section-title">Moments & Milestones</h2>
+      <div class="section-divider"></div>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55)">A glimpse into professional engagements and academic pursuits.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in">
+        <img src="img-2.jpg" alt="Dr. Rilwan at an academic conference">
+        <div class="gallery-caption">
+          <h3>Academic Conference</h3>
+          <p>Sharing research insights at an international forum on African studies.</p>
+        </div>
+      </div>
+      <div class="gallery-item fade-in" style="transition-delay:0.1s">
+        <img src="img.jpg" alt="Dr. Rilwan in the lecture hall">
+        <div class="gallery-caption">
+          <h3>Teaching & Mentorship</h3>
+          <p>Engaging with students in the lecture theatre at Ahmadu Bello University.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards" class="awards">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag"><i class="fas fa-medal" style="margin-right:6px;"></i>Recognitions</div>
+      <h2 class="section-title">Awards & Distinctions</h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Honours recognizing academic excellence and professional contributions.</p>
+    </div>
+    <div class="awards-grid">
+      <div class="award-card fade-in">
+        <div class="award-icon"><i class="fas fa-award"></i></div>
+        <h3>Best Research Paper</h3>
+        <p>Award for outstanding doctoral research contributions to political science and African studies.</p>
+      </div>
+      <div class="award-card fade-in" style="transition-delay:0.1s">
+        <div class="award-icon"><i class="fas fa-star"></i></div>
+        <h3>Teaching Excellence</h3>
+        <p>Recognition for distinguished teaching and mentorship of postgraduate students.</p>
+      </div>
+      <div class="award-card fade-in" style="transition-delay:0.2s">
+        <div class="award-icon"><i class="fas fa-trophy"></i></div>
+        <h3>Scholarly Achievement</h3>
+        <p>Commendation for peer-reviewed publications and intellectual contributions to the discipline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="affiliations" class="affiliations">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag"><i class="fas fa-link" style="margin-right:6px;"></i>Professional Network</div>
+      <h2 class="section-title">Memberships & Affiliations</h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Engagement with leading academic and professional bodies.</p>
+    </div>
+    <div class="affiliations-grid">
+      <div class="affiliation-item fade-in">
+        <div class="affiliation-icon"><i class="fas fa-university"></i></div>
+        <h3>Nigerian Political Science Association</h3>
+        <p>Active member contributing to national dialogue on governance, policy research, and academic standards.</p>
+      </div>
+      <div class="affiliation-item fade-in" style="transition-delay:0.1s">
+        <div class="affiliation-icon"><i class="fas fa-globe"></i></div>
+        <h3>African Studies Association</h3>
+        <p>Participant in international scholarly networks advancing African research and cross-continental collaboration.</p>
+      </div>
+      <div class="affiliation-item fade-in" style="transition-delay:0.2s">
+        <div class="affiliation-icon"><i class="fas fa-handshake"></i></div>
+        <h3>Peacebuilding & Conflict Resolution Forum</h3>
+        <p>Engaged member facilitating dialogue and research on conflict dynamics and peace processes in Africa.</p>
+      </div>
+      <div class="affiliation-item fade-in" style="transition-delay:0.3s">
+        <div class="affiliation-icon"><i class="fas fa-book"></i></div>
+        <h3>International Development Association</h3>
+        <p>Collaborating with global practitioners on sustainable development policy and institutional capacity building.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="teaching" class="teaching">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag" style="color:var(--champagne)"><i class="fas fa-chalkboard-user" style="margin-right:6px;"></i>Academic</div>
+      <h2 class="section-title">Teaching & Mentorship</h2>
+      <div class="section-divider"></div>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55)">Dedicated to nurturing the next generation of political scientists.</p>
+    </div>
+    <div class="teaching-grid">
+      <div class="teaching-card fade-in">
+        <div class="teaching-icon"><i class="fas fa-book-open"></i></div>
+        <h3>Undergraduate Courses</h3>
+        <p>Core modules in political theory, governance systems, and introduction to African politics.</p>
+      </div>
+      <div class="teaching-card fade-in" style="transition-delay:0.1s">
+        <div class="teaching-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Postgraduate Supervision</h3>
+        <p>Mentoring master's and doctoral students through rigorous research design and thesis development.</p>
+      </div>
+      <div class="teaching-card fade-in" style="transition-delay:0.2s">
+        <div class="teaching-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>Research Seminars</h3>
+        <p>Facilitating advanced workshops on conflict analysis, policy research methods, and academic writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   <div class="container">
     <div class="section-header fade-in">
       <div class="section-tag"><i class="fas fa-paper-plane" style="margin-right:6px;"></i>Contact</div>
@@ -559,12 +790,47 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 function submitForm() {
   const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
   const femail = document.getElementById('femail').value.trim();
   const fmessage = document.getElementById('fmessage').value.trim();
-  if (!fname || !femail || !fmessage) { alert('Please fill in your name, email, and message.'); return; }
+  
+  if (!fname || !femail || !fmessage) { 
+    alert('Please fill in your name, email, and message.'); 
+    return; 
+  }
+  
+  if (!femail.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  
   document.getElementById('contact-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
+  
+  // Scroll to success message
+  document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
+  
+  // Reset form after 3 seconds
+  setTimeout(() => {
+    document.getElementById('fname').value = '';
+    document.getElementById('lname').value = '';
+    document.getElementById('femail').value = '';
+    document.getElementById('fmessage').value = '';
+    document.getElementById('fsubject').value = '';
+    document.getElementById('contact-form').style.display = 'block';
+    document.getElementById('form-success').style.display = 'none';
+  }, 4000);
 }
+
+// Allow form submission on Enter key
+document.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && e.ctrlKey) {
+    const activeElement = document.activeElement;
+    if (activeElement && activeElement.closest('#contact-form')) {
+      submitForm();
+    }
+  }
+});
 </script>
 </body>
 </html>

@@ -362,11 +362,52 @@
     <p class="hero-title">Lecturer · Department of Political and International Studies</p>
     <p class="hero-desc">Advancing scholarship in Political Economy, Peace & Conflict Studies, and International Development across Africa and beyond.</p>
     <div class="hero-btns">
-      <a href="#specializations" class="btn-primary"><i class="fas fa-flask" style="margin-right:8px;"></i>View Research</a>
-      <a href="#contact" class="btn-outline"><i class="fas fa-envelope" style="margin-right:8px;"></i>Get In Touch</a>
+      <a href="dr ridwan cv.pdf" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-file-lines" style="margin-right:8px;"></i>View CV</a>
+      <a href="#contacts" class="btn-outline"><i class="fas fa-envelope" style="margin-right:8px;"></i>Send Inquiry</a>
     </div>
   </div>
   <div class="hero-scroll"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<section id="cv" class="about" style="background: linear-gradient(180deg, #f8f6f0 0%, #ffffff 100%);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag"><i class="fas fa-id-card" style="margin-right:6px;"></i>Curriculum Vitae</div>
+      <h2 class="section-title">Professional CV Overview</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p><strong>Dr. Rilwan Abdullahi Aliyu</strong> is a lecturer and researcher in political and international studies with a strong focus on political economy, peace and conflict studies, public governance, international relations, and development policy in Africa.</p>
+        <p>His professional profile combines years of academic teaching, advanced research, supervision, and public intellectual engagement, with special attention to governance, resource politics, conflict dynamics, and the strategic role of African states in international affairs.</p>
+        <p>He is available for research collaboration, institutional consultancy, postgraduate supervision, speaking engagements, and policy-oriented academic work.</p>
+        <div class="about-hobbies">
+          <div class="hobby-chip"><i class="fas fa-briefcase"></i> Lecturer</div>
+          <div class="hobby-chip"><i class="fas fa-microscope"></i> Researcher</div>
+          <div class="hobby-chip"><i class="fas fa-users"></i> Mentor</div>
+        </div>
+      </div>
+
+      <div class="fade-in" style="transition-delay:0.15s">
+        <div class="edu-list">
+          <div class="edu-item">
+            <h4>Academic Role</h4>
+            <p>Lecturer, Department of Political and International Studies</p>
+            <div class="edu-year"><i class="fas fa-building" style="margin-right:4px;font-size:0.65rem;"></i>Ahmadu Bello University, Zaria</div>
+          </div>
+          <div class="edu-item">
+            <h4>Research Interests</h4>
+            <p>Political economy, peace and conflict, governance, international development, and foreign policy</p>
+          </div>
+          <div class="edu-item">
+            <h4>Available For</h4>
+            <p>Research collaboration, academic supervision, project consultation, speaking invites, and institutional partnerships</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="about" id="about">
@@ -665,7 +706,7 @@
 </section>
 
 
-  <div class="container">
+  <div class="container" id="contacts">
     <div class="section-header fade-in">
       <div class="section-tag"><i class="fas fa-paper-plane" style="margin-right:6px;"></i>Contact</div>
       <h2 class="section-title">Get In Touch</h2>
@@ -720,19 +761,37 @@
             <input type="email" id="femail" placeholder="your@email.com">
           </div>
           <div class="form-group">
+            <label>Inquiry Type</label>
+            <select id="request-type">
+              <option value="">Select inquiry type...</option>
+              <option>Research Collaboration</option>
+              <option>Get in Touch</option>
+              <option>Submit Assignment</option>
+              <option>Project Enquiry</option>
+              <option>Speaking Invitation</option>
+              <option>Publication / CV Request</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label>Subject</label>
             <select id="fsubject">
               <option value="">Select a subject...</option>
               <option>Research Collaboration</option>
               <option>PDF / Publication Request</option>
               <option>Academic Enquiry</option>
-              <option>Speaking Invitation</option>
+              <option>Project / Consultancy</option>
+              <option>General Inquiry</option>
               <option>Other</option>
             </select>
           </div>
           <div class="form-group">
+            <label>Upload File (optional)</label>
+            <input type="file" id="file-upload" accept=".pdf,.doc,.docx,.ppt,.pptx,.zip,.rar,.png,.jpg,.jpeg">
+          </div>
+          <div class="form-group">
             <label>Message</label>
-            <textarea id="fmessage" placeholder="Write your message here..."></textarea>
+            <textarea id="fmessage" placeholder="Share your project details, research idea, question, assignment, or any other information here..."></textarea>
           </div>
           <button class="submit-btn" onclick="submitForm()">
             <i class="fas fa-paper-plane"></i> Send Message
@@ -740,8 +799,8 @@
         </div>
         <div class="form-success" id="form-success">
           <i class="fas fa-check-circle"></i>
-          <h4 style="margin:0.5rem 0;font-family:'Inter',sans-serif;font-weight:600;">Message Sent!</h4>
-          <p style="font-size:0.85rem;margin:0;">Thank you for reaching out. Dr. Aliyu will respond within 2–3 business days.</p>
+          <h4 style="margin:0.5rem 0;font-family:'Inter',sans-serif;font-weight:600;">Your email app is opening.</h4>
+          <p style="font-size:0.85rem;margin:0;">Please review the message and add any file attachment before sending it to Dr. Aliyu at the Gmail address.</p>
         </div>
       </div>
     </div>
@@ -793,33 +852,54 @@ function submitForm() {
   const lname = document.getElementById('lname').value.trim();
   const femail = document.getElementById('femail').value.trim();
   const fmessage = document.getElementById('fmessage').value.trim();
-  
-  if (!fname || !femail || !fmessage) { 
-    alert('Please fill in your name, email, and message.'); 
-    return; 
+  const requestType = document.getElementById('request-type').value.trim();
+  const fsubject = document.getElementById('fsubject').value.trim();
+  const fileUpload = document.getElementById('file-upload');
+
+  if (!fname || !femail || !fmessage) {
+    alert('Please fill in your name, email, and message.');
+    return;
   }
-  
+
   if (!femail.includes('@')) {
     alert('Please enter a valid email address.');
     return;
   }
-  
+
+  const fullName = [fname, lname].filter(Boolean).join(' ');
+  const subjectLine = `New ${requestType || fsubject || 'Academic Inquiry'} from ${fullName}`;
+  const fileName = fileUpload && fileUpload.files && fileUpload.files.length > 0 ? fileUpload.files[0].name : 'No file attached';
+
+  const emailBody = [
+    'Name: ' + fullName,
+    'Email: ' + femail,
+    'Inquiry Type: ' + (requestType || 'Not specified'),
+    'Subject: ' + (fsubject || 'General Inquiry'),
+    'Attachment: ' + fileName,
+    '',
+    'Message:',
+    fmessage
+  ].join('\n');
+
+  const mailtoLink = `mailto:elderawe8@gmail.com?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(emailBody)}`;
+
   document.getElementById('contact-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
-  
-  // Scroll to success message
   document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
-  
-  // Reset form after 3 seconds
+
+  window.location.href = mailtoLink;
+
   setTimeout(() => {
     document.getElementById('fname').value = '';
     document.getElementById('lname').value = '';
     document.getElementById('femail').value = '';
     document.getElementById('fmessage').value = '';
+    document.getElementById('request-type').value = '';
     document.getElementById('fsubject').value = '';
+    document.getElementById('file-upload').value = '';
     document.getElementById('contact-form').style.display = 'block';
     document.getElementById('form-success').style.display = 'none';
-  }, 4000);
+  }, 5000);
 }
 
 // Allow form submission on Enter key
